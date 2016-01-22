@@ -1,0 +1,2 @@
+NET  clk           LOC="AH15";  # Bank 4, Vcco=3.3V, No DCI
+NET  led           LOC="E8";    # Bank 20, Vcco=3.3V, DCI using 49.9 ohm resistors

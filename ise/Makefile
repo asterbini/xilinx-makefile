@@ -1,7 +1,9 @@
 #DEVICE = xc6slx9-2-ftg256 #XuLA2 lx9  
 #BOARD = xula2
-DEVICE = xc3s200-FT256-4
-BOARD = DigilentS3
+#DEVICE = xc3s200-FT256-4
+#BOARD = DigilentS3
+DEVICE = xc5vfx70t-1-ff1136
+BOARD = ml507
 
 IMPACT_CMD_FILE := ../board/$(BOARD)/impact.cmd
 UCF_FILE := ../board/$(BOARD)/top.ucf
@@ -77,8 +79,10 @@ bitgen: $(TOP).bit
 
 #-----------------------------------------------------------------------------
 
-burn: $(TOP).bit $(IMPACT_CMD_FILE)
-	impact -batch $(IMPACT_CMD_FILE)
+burn: $(TOP).bit 
+	# $(IMPACT_CMD_FILE)
+	#impact -batch $(IMPACT_CMD_FILE)
+	xc3sprog -c xpc -v -p 4 top.bit
 
 #-----------------------------------------------------------------------------
 
